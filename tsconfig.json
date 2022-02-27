@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
-    "strict": true,
+    "target": "es5", // 빌드된 자바스크립트 파일의 버전
+    "module": "esnext", // commonjs, amd 관련 설정
+    "strict": true,  // 엄격모드로 할 것인지
     "jsx": "preserve",
     "importHelpers": true,
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
+    "moduleResolution": "node", // 모듈 해석방식
+    "experimentalDecorators": true, 
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": false, // 대소문자 구분있게 파일의 상태가 다르면 다르게 구분하는 설정입니다.
     "useDefineForClassFields": true,
     "sourceMap": true,
     "baseUrl": ".",
@@ -29,14 +29,14 @@
       "scripthost"
     ]
   },
-  "include": [
+  "include": [ // 해당 패스의 파일들을 자바스크립트로 컴파일하게 된다.
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
-  "exclude": [
+  "exclude": [ // 빌드 예외 파일
     "node_modules"
   ]
 }
