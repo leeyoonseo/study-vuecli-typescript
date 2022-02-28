@@ -5,9 +5,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, provide } from "vue";
+import { ref, provide, readonly } from "vue";
 import ProviderChildren from "@/components/providerChildren";
 
 const message = ref("메세지다.");
-provide("message", message);
+provide("message", readonly(message));
 </script>
