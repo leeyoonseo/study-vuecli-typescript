@@ -1,27 +1,21 @@
 <template>
   <div class="home">
-    <HelloWorld msg="메세지다." />
-    <Message
-      :message="message"
-      @update:input="(value) => handleInputMessage(value)"
-    />
-
-    <Children parent-message="부모로부터 보내는 메시지" />
+    <Children :parent-message="message" />
+    <button @click="changeParentMessage">메시지를 바꾼다.</button>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, Ref } from "vue";
-import HelloWorld from "@/components/HelloWorld.vue";
-import Message from "@/components/Message.vue";
 import Children from "@/components/children.vue";
 
 interface IData {
   message: string | number;
 }
 
-const message: Ref<IData["message"]> = ref("HomeView에서 보내는 메시지");
-const handleInputMessage = (value: IData["message"]) => {
-  message.value = value;
+const message: Ref<IData["message"]> = ref("어서오세요.");
+
+const changeParentMessage = () => {
+  message.value = "안녕히가세요.";
 };
 </script>
