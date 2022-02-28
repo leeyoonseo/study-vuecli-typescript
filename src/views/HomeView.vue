@@ -1,21 +1,13 @@
 <template>
   <div class="home">
-    <Children :parent-message="message" />
-    <button @click="changeParentMessage">메시지를 바꾼다.</button>
+    <ProviderChildren />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, Ref } from "vue";
-import Children from "@/components/children.vue";
+import { ref, provide } from "vue";
+import ProviderChildren from "@/components/providerChildren";
 
-interface IData {
-  message: string | number;
-}
-
-const message: Ref<IData["message"]> = ref("어서오세요.");
-
-const changeParentMessage = () => {
-  message.value = "안녕히가세요.";
-};
+const message = ref("메세지다.");
+provide("message", message);
 </script>
