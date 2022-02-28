@@ -4,7 +4,9 @@
     <Message
       :message="message"
       @update:input="(value) => handleInputMessage(value)"
-    ></Message>
+    />
+
+    <Children parent-message="부모로부터 보내는 메시지" />
   </div>
 </template>
 
@@ -12,6 +14,7 @@
 import { ref, Ref } from "vue";
 import HelloWorld from "@/components/HelloWorld.vue";
 import Message from "@/components/Message.vue";
+import Children from "@/components/children.vue";
 
 interface IData {
   message: string | number;
