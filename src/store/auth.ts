@@ -1,11 +1,18 @@
 import { defineStore } from "pinia";
 
+interface State {
+  name: string;
+  email: string;
+  username: string;
+}
+
 export const storeAuth = defineStore("auth", {
-  state: () => ({
-    name: "John Doe",
-    email: "fake@email.com",
-    username: "jd123",
-  }),
+  state: () =>
+    ({
+      name: "John Doe",
+      email: "fake@email.com",
+      username: "jd123",
+    } as State),
   getters: {
     getName: (state) => state.name,
   },
