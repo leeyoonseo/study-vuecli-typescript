@@ -1,13 +1,11 @@
 import { defineStore } from "pinia";
 
 export const storeAuth = defineStore("auth", {
-  state: () => {
-    return {
-      name: "John Doe",
-      email: "fake@email.com",
-      username: "jd123",
-    };
-  },
+  state: () => ({
+    name: "John Doe",
+    email: "fake@email.com",
+    username: "jd123",
+  }),
   getters: {
     getName: (state) => state.name,
   },
@@ -24,11 +22,3 @@ export const storeAuth = defineStore("auth", {
     handleClick2: 300,
   },
 });
-
-// export const useLoggedInUserStore = defineStore({
-//   // id is required so that Pinia can connect the store to the devtools
-//   id: 'loggedInUser',
-//   state: () =>({}),
-//   getters: {},
-//   actions:{}
-// })
